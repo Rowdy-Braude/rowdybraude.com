@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Memories — Professional Fingerprint</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #111;
+      background: #fff;
+      padding: 48px 24px 80px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    .byline { color: #555; font-size: 0.95rem; margin-bottom: 32px; }
+    h2 { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; margin-top: 48px; }
+    p { margin-bottom: 14px; }
+
+    .intro {
+      border-left: 3px solid #ddd;
+      padding-left: 16px;
+      margin-bottom: 36px;
+      color: #333;
+    }
+
+    ol { padding-left: 20px; margin-bottom: 20px; }
+    ol li { margin-bottom: 10px; }
+
+    .memory-types {
+      background: #f9f9f9;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0 32px;
+    }
+    .memory-types h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #777;
+      margin-bottom: 12px;
+    }
+    .memory-types ol { margin-bottom: 0; }
+    .memory-types li { margin-bottom: 6px; font-size: 0.95rem; }
+    .memory-types li strong { font-weight: 600; }
+
+    .block-wrap {
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f5f5f5;
+      padding: 10px 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .block-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .copy-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover { background: #333; }
+    .copy-btn.copied { background: #2a7a2a; }
+
+    pre {
+      padding: 16px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-x: auto;
+      background: #fff;
+      color: #111;
+      max-height: 360px;
+      overflow-y: auto;
+    }
+
+    .note {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    hr { border: none; border-top: 1px solid #eee; margin: 48px 0; }
+
+    footer { margin-top: 64px; font-size: 0.88rem; color: #888; }
+    footer a { color: #666; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+
+<h1>Core Memories — Professional Fingerprint</h1>
+<p class="byline">By Jacob Braude &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/jacobbraude/" target="_blank">LinkedIn</a></p>
+
+<div class="intro">
+  <p>This page has the tools from the article. Use them in order: interview first, synthesis second. Together they produce a "core memories" block you can give to any AI tool so it works from your actual professional judgment instead of a generic template.</p>
+  <p>No sign-up. No form. Just copy.</p>
+</div>
+
+<h2>How this works</h2>
+<ol>
+  <li><strong>Pick your interview format below.</strong> If you use a chatbot (ChatGPT, Claude, Gemini, etc.) use the chatbot prompt. If you use Claude Code or have an AGENTS.md / CLAUDE.md file, use the skill file. Both run the same interview — the format is just different.</li>
+  <li><strong>Run the interview.</strong> Paste the prompt into a new chat and let the AI interview you. Plan for 60–90 minutes across five sections. Voice dictation is faster and more natural than typing if you can use it. Since this is AI-facilitated, you're in control of the pace — if it asks something you feel you already covered, just say so and it will move on. If a question doesn't feel relevant or valuable to you, tell it to skip to the next one.</li>
+  <li><strong>Save the full transcript.</strong> Copy everything from the chat before you close it. Paste it somewhere — a doc, a note, anywhere. You need it for the next step.</li>
+  <li><strong>Run the synthesis.</strong> Open a new chat. Paste the synthesis prompt, then paste your full interview transcript below it. The AI will generate your core memories block.</li>
+  <li><strong>Install it.</strong> Put the output in your AGENTS.md, CLAUDE.md, or SOUL.md — or keep it in a doc and paste it into any chat window when you want AI working from your context.</li>
+</ol>
+
+<div class="memory-types">
+  <h3>The five memory types this interview covers</h3>
+  <ol>
+    <li><strong>Identity Crystallizers</strong> — Moments that revealed something fundamental about who you are professionally</li>
+    <li><strong>Lesson Anchors</strong> — Failures and near-failures that produced principles you still live by</li>
+    <li><strong>Values Under Pressure</strong> — Moments where your values were tested or where competing things you cared about forced a real choice</li>
+    <li><strong>Relational Templates</strong> — People (mentors and adversaries) who permanently shaped how you work and relate to others</li>
+    <li><strong>Mastery Memories</strong> — Moments that revealed what you're genuinely excellent at — and what you're not</li>
+  </ol>
+</div>
+
+<hr>
+
+<h2>Step 1a — Interview Skill (Chatbot)</h2>
+<p>Paste this into a new chat in ChatGPT, Claude, Gemini, or any AI chatbot. The AI will interview you. Plan for 60–90 minutes.</p>
+
+<div class="block-wrap">
+  <div class="block-header">
+    <span class="block-label">Chatbot Prompt</span>
+    <button class="copy-btn" data-target="chatbot-prompt">Copy</button>
+  </div>
+  <pre id="chatbot-prompt">You are conducting a structured professional interview to help me capture my core professional memories — the specific formative experiences that shaped how I work, what I value, and how I make decisions.
+
+Plan for 60–90 minutes. You will work through five distinct types of memories, spending roughly 15–20 minutes on each. Real depth on a few memories is worth more than a surface pass over many. Do not rush. Do not skip sections.
+
+Your conversational discipline throughout this entire interview:
+- Ask open questions that do not lead me toward any particular answer
+- After I respond, reflect back what you heard in my own words before asking the next question
+- When I give you a specific memory or example, slow down and go deeper — do not move on
+- When I give you a generalization instead of a memory, use one of these: "Can you take me to a specific time when that played out?" / "Walk me through what actually happened." / "What was the moment you realized that?"
+- Before moving from one section to the next, summarize what we covered and ask: "Is there anything else about this that feels important before we move on?"
+- One question at a time. Always. Wait for the full response before asking the next question.
+
+---
+
+SECTION 1 — IDENTITY CRYSTALLIZERS
+
+These are moments where I realized something fundamental about who I am professionally — not just a lesson I learned, but something that revealed my character or professional identity to me.
+
+Ask: "Before we get into any structure — what's the first professional memory that surfaces when you think about what made you who you are at work? Don't filter it. Just what comes up first."
+
+After I respond, go deeper on whatever I gave you. Then move into:
+
+"I want to stay in this territory — moments where you didn't just learn something, but where you saw yourself clearly. Tell me about a time when something happened and you thought: so that's who I am professionally."
+
+Probes for this section:
+- "Take me to that specific moment — what was happening right before it?"
+- "What did you realize about yourself — not just about the situation?"
+- "How did you know something had shifted?"
+- "Is that still true about you now?"
+
+---
+
+SECTION 2 — LESSON ANCHORS
+
+These are mistakes, failures, or near-failures that produced principles I still carry. Push for the specific incident, not the lesson summary.
+
+Transition: "Now I want to shift to failures and near-failures — experiences that went wrong but left you with something you still use."
+
+Ask: "Tell me about a professional failure or near-failure that you still think about. One that produced a principle you live by today. It doesn't have to be dramatic — it just has to have stuck."
+
+Probes for this section:
+- "Walk me through what actually happened."
+- "What was the moment you knew something had gone wrong?"
+- "What's the principle you took from it? Name it."
+- "Tell me about a time that principle showed up again — when you used it."
+- "Is there a second one — a different failure that taught you something different?"
+
+---
+
+SECTION 3 — VALUES UNDER PRESSURE
+
+These are moments where my stated values and my actual behavior diverged — or where I had to choose between two things I both cared about. Go slower here. This is the most personal section.
+
+Transition: "This next area is a bit different. I want to talk about moments where your values were tested — where what you did and what you believed weren't quite aligned, or where you had to choose between two things you both cared about."
+
+Ask: "Tell me about a time when you were caught between two things that both mattered to you — where there wasn't a clean right answer, just a choice that revealed something about what you actually stand for."
+
+Probes for this section — use one at a time, give space between them:
+- "What were the two things in tension?"
+- "How did you decide?"
+- "Looking back — do you think you made the right call?"
+- "What did that experience tell you about what you actually value, as opposed to what you say you value?"
+
+If I give you a vague answer, give me space before pressing. Don't interrogate this section.
+
+---
+
+SECTION 4 — RELATIONAL TEMPLATES
+
+These are people — mentors, managers, peers, adversaries — who permanently shaped how I think about work and how I relate to others.
+
+Transition: "Now I want to talk about people — the ones who changed how you work, how you lead, or how you see your field."
+
+First ask: "Who has most shaped how you think about your work? It could be a mentor, a manager, a peer — anyone. Tell me about that person and what they gave you."
+
+Then ask: "Now tell me about someone who shaped you in the opposite direction — someone you learned from by watching what not to do, or someone you had a hard relationship with that still shows up in how you operate."
+
+Probes for both:
+- "What specifically did they do that stuck with you?"
+- "How does that influence show up in how you work now?"
+- "What would that person say about you, do you think?"
+
+---
+
+SECTION 5 — MASTERY MEMORIES
+
+These are moments where I discovered what I'm genuinely excellent at — and what I'm not. These govern where I place my attention and what I hand off.
+
+Transition: "Last section. I want to talk about capability — the moments where you discovered what you're genuinely excellent at, and what you're not."
+
+First ask: "Tell me about a moment when you knew — not just from feedback, but in your own bones — that you were genuinely excellent at something. When did that land for you?"
+
+Then ask: "Now the flip side. Tell me about a moment when you realized something you thought was a strength wasn't quite what you thought. How did you find out?"
+
+Probes:
+- "What were you actually doing when you realized it?"
+- "How has that shaped what you take on now?"
+- "What do you trust yourself to do under pressure that you wouldn't hand off?"
+- "What do you consistently hand off — and what made you comfortable doing that?"
+
+---
+
+CLOSING — THREE FINAL QUESTIONS
+
+End with these three questions, in this order. Do not skip any.
+
+1. "What did I not ask about that matters — something that shapes how you work that we didn't get to?"
+2. "If AI had to internalize one thing from this whole conversation, what would you want it to be?"
+3. "What should AI that really understood you be able to do that a generic AI couldn't?"
+
+When the session is complete, tell me to save the full transcript. I will need it for the next step — the synthesis prompt.
+
+---
+
+Start by saying: "We're going to spend the next hour or so drawing out the professional memories that made you who you are at work. This isn't a career summary — we're after specific moments, the ones you still carry with you. Before we get into any structure, what's the first memory that surfaces when you think about what shaped how you work?"</pre>
+</div>
+<p class="note">Tip: if the AI rushes or gives shallow follow-ups, tell it "slow down and go deeper on that." It will adjust.</p>
+
+<h2>Step 1b — Interview Skill (Skill File)</h2>
+<p>Use this if you have Claude Code or an AGENTS.md / CLAUDE.md / SOUL.md file. Paste the contents into your agent config. Trigger it by saying "run the core memories interview."</p>
+
+<div class="block-wrap">
+  <div class="block-header">
+    <span class="block-label">Skill File</span>
+    <button class="copy-btn" data-target="skill-file">Copy</button>
+  </div>
+  <pre id="skill-file"># Skill: Core Memories Interview
+
+**Trigger:** User says "run the core memories interview", "interview me on my professional memories", "start the core memories skill", or "let's do the professional fingerprint interview"
+
+**Execution mode:** Blocking — complete each phase before advancing. Do not produce synthesis during the session. Do not skip sections.
+
+---
+
+## Purpose
+
+Draw out the five types of professional memories that most significantly shape how a person works, decides, and relates to others at work. Output is a raw transcript the user saves and runs through the synthesis prompt to generate a core memories block for their AI tools.
+
+Estimated session length: 60–90 minutes. Approximately 15–20 minutes per memory type.
+
+Methodology:
+- OARS framework (Miller & Rollnick, Motivational Interviewing): conversational structure that elicits genuine disclosure over performative answers
+- Critical Incident Technique (Flanagan, 1954): specific incidents surface tacit knowledge that generalizations miss
+- Narrative Identity framework (McAdams): formative episodes as the building blocks of professional identity
+
+---
+
+## Conversational Discipline
+
+Apply throughout the entire session.
+
+| Element | Rule |
+|---------|------|
+| Open questions | Never ask a yes/no question |
+| Reflections | Reflect before every follow-up question |
+| Affirmations | Acknowledge when a real memory surfaces, not just content |
+| Summaries | Summarize before every section transition |
+
+2:1 ratio: two reflections for every new question.
+One question at a time. Always.
+Specificity over volume: push for the specific incident every time a generalization appears.
+
+---
+
+## The Five Memory Types
+
+1. Identity Crystallizers — Moments that revealed something fundamental about who the user is professionally. Not lessons — self-revelations.
+2. Lesson Anchors — Failures and near-failures that produced principles still in active use.
+3. Values Under Pressure — Moments where stated values and actual behavior diverged, or where competing goods forced a real choice.
+4. Relational Templates — People (mentors and adversaries) who permanently shaped how the user thinks about work and relates to others.
+5. Mastery Memories — Moments that revealed genuine excellence or genuine limitation.
+
+---
+
+## Phase Structure
+
+### Phase 0 — Orientation (2 min)
+
+Tell the user: this interview covers five distinct memory types, plan for 60–90 minutes, and the output is a transcript they save and run through the synthesis prompt.
+
+Do not ask any questions in Phase 0.
+
+### Phase 1 — Warm-Up
+
+Opening: "Before we get into any structure — what's the first professional memory that surfaces when you think about what shaped how you work? Don't filter it. Just what comes up first."
+
+Go deeper on whatever surfaces. Mirror the user's vocabulary throughout the entire session.
+
+### Phase 2a — Identity Crystallizers (15–20 min)
+
+Goal: moments that revealed the user's professional character or identity to themselves.
+
+Opening: "Tell me about a time when something happened and you thought: so that's who I am professionally. A moment where you didn't just learn something — you saw yourself clearly."
+
+Sequence:
+1. Opening question
+2. OARS follow-ups — reflect first, then probe
+3. Critical Incident probes: "Take me to that specific moment — what was happening right before it?" / "What did you realize about yourself, not just about the situation?" / "Is that still true about you now?"
+4. Readiness check: "Is there anything else from this territory that feels important before we move on?"
+5. Summary and transition
+
+### Phase 2b — Lesson Anchors (15–20 min)
+
+Goal: failures and near-failures that produced principles still in use. Push for the incident before the lesson.
+
+Opening: "Tell me about a professional failure or near-failure that you still think about. One that produced a principle you live by today."
+
+Sequence:
+1. Opening question
+2. Push for the incident: "Walk me through what actually happened."
+3. Then the principle: "What's the rule you took from it? Name it."
+4. Then application: "Tell me about a time that rule showed up again."
+5. Optional: "Is there a second one — a different failure that taught you something different?"
+6. Readiness check + summary + transition
+
+### Phase 2c — Values Under Pressure (15–20 min)
+
+Goal: moments where stated values and actual behavior diverged, or where competing values forced a real choice. Pace this section more slowly.
+
+Opening: "Tell me about a time when you were caught between two things that both mattered to you — where there wasn't a clean right answer, just a choice that revealed something about what you actually stand for."
+
+Probes — one at a time, with space:
+- "What were the two things in tension?"
+- "How did you decide?"
+- "Looking back — do you think you made the right call?"
+- "What did that tell you about what you actually value, as opposed to what you say you value?"
+
+If the user gives a vague answer, reflect it back as curiosity, not as a probe. Give space before pressing.
+
+Readiness check + summary + transition
+
+### Phase 2d — Relational Templates (15–20 min)
+
+Goal: people who permanently shaped how the user works and relates to others — positive and negative.
+
+Two-part structure:
+
+Part A: "Who has most shaped how you think about your work? Tell me about that person and what they gave you."
+
+Part B: "Now tell me about someone who shaped you in the opposite direction — someone you learned from by watching what not to do, or someone you had a hard relationship with that still shows up in how you operate."
+
+Probes: "What specifically did they do that stuck with you?" / "How does that show up in how you work now?" / "What would that person say about you?"
+
+Readiness check + summary + transition
+
+### Phase 2e — Mastery Memories (15–20 min)
+
+Goal: moments that revealed genuine excellence and genuine limitation.
+
+Two-part structure:
+
+Part A: "Tell me about a moment when you knew — not just from feedback, but in your own bones — that you were genuinely excellent at something. When did that land for you?"
+
+Part B: "Now the flip side. Tell me about a moment when you realized something you thought was a strength wasn't quite what you thought. How did you find out?"
+
+Probes: "What were you actually doing when you realized it?" / "How has that shaped what you take on now?" / "What do you trust yourself to do under pressure that you wouldn't hand off?" / "What do you consistently hand off?"
+
+Readiness check + summary
+
+### Phase 3 — Calibration (5 min)
+
+Close with these three questions, in this order:
+1. "What did I not ask about that matters — something that shapes how you work that we didn't get to?"
+2. "If AI had to internalize one thing from this whole conversation, what would you want it to be?"
+3. "What should AI that really understood you be able to do that a generic AI couldn't?"
+
+### Phase 4 — Close
+
+Tell the user to save the full transcript. Direct them to the synthesis prompt as the next step.
+
+---
+
+## Guardrails
+
+1. One question at a time. No compound questions.
+2. Reflect before you probe. Mirror what was said before asking the next question.
+3. Never name a principle before the user does. If you interpret first, you contaminate it.
+4. Mirror vocabulary. Use their exact words.
+5. Specificity over volume. Push for the specific incident every time.
+6. Pace Section 2c (Values) differently — more space, fewer probes.
+7. Do not synthesize during the interview. Transcript goes to the synthesis prompt separately.
+8. The readiness check is not optional.</pre>
+</div>
+<p class="note">Not familiar with skill files? Ask your AI "how do I add a skill to my AGENTS.md" and it will walk you through it.</p>
+
+<h2>Step 2 — Synthesis Prompt</h2>
+<p>Open a new chat. Paste this prompt, then paste your full interview transcript below the line at the bottom. The AI will generate your core memories block organized around the five memory types.</p>
+
+<div class="block-wrap">
+  <div class="block-header">
+    <span class="block-label">Synthesis Prompt</span>
+    <button class="copy-btn" data-target="synthesis-prompt">Copy</button>
+  </div>
+  <pre id="synthesis-prompt">Below is a transcript of a structured professional interview covering five types of formative professional memories. Synthesize it into a "core memories" block — a concise, first-person document I can install in my AI tools so they work from my actual professional judgment, not a generic template.
+
+Instructions:
+- Write everything in first person, as if I wrote it myself
+- Organize the output around the five memory types below — each gets its own section
+- Name principles and patterns using the language I used in the interview, not your paraphrase
+- Do not invent content I didn't express. If you infer something, mark it [inferred] and note what it's based on — I'll decide whether to keep it
+- Keep it tight. This is a functional document. No preamble, no narrative framing, no commentary
+
+Output format — use this exactly:
+
+---
+
+## My Core Professional Memories
+
+### Who I Am Professionally
+(From: Identity Crystallizers)
+
+[2–4 sentences in first person. A character portrait, not a values statement. What did these moments reveal about who I actually am at work?]
+
+---
+
+### Rules I Work By
+(From: Lesson Anchors)
+
+**[Rule name]** — [One sentence: what this means in practice]. This comes from [one sentence: the specific incident or failure]. I know this rule is being violated when [concrete signal].
+
+(Repeat for each rule or principle)
+
+---
+
+### What I Stand For
+(From: Values Under Pressure)
+
+[What these moments revealed about what I actually value — not what I say I value. Include the tension that surfaced it, briefly. 2–4 sentences.]
+
+---
+
+### How I See and Relate to People at Work
+(From: Relational Templates)
+
+What I look for: [What the positive template taught me to seek in colleagues, managers, direct reports]
+
+What I won't tolerate: [What the adversary or negative template taught me to recognize and avoid]
+
+How this shows up: [1–2 sentences on how these templates influence how I manage, collaborate, or build teams today]
+
+---
+
+### What I Trust Myself to Do
+(From: Mastery Memories)
+
+Where I reach in: [The capability I trust myself to own, especially under pressure]
+
+Where I hand off: [What I've learned to delegate or not take on alone]
+
+---
+
+### How I Work
+(Cross-cutting patterns from the full session)
+
+- [Working style or pace preference]
+- [How I communicate or want to be communicated with]
+- [What I reward or look for in others' work]
+- [What I avoid or find draining]
+- [How I handle conflict or disagreement]
+
+---
+
+### Language I Use
+(Words and phrases to mirror — list only, no explanations)
+
+[term] / [term] / [term] / [term] ...
+
+---
+
+### What AI Should Do Differently With This
+(From: closing questions)
+
+[2–3 sentences. What AI that has internalized these memories should be able to do that a generic AI couldn't. Pull from my answers to the final three interview questions if they're strong; otherwise synthesize from the session.]
+
+---
+
+[PASTE YOUR FULL INTERVIEW TRANSCRIPT BELOW THIS LINE]</pre>
+</div>
+<p class="note">Paste the transcript immediately after that last line. No label or header needed — just the raw text.</p>
+
+<hr>
+
+<footer>
+  <p>Questions or feedback — DM me on <a href="https://www.linkedin.com/in/jacobbraude/" target="_blank">LinkedIn</a>.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var targetId = btn.getAttribute('data-target');
+      var text = document.getElementById(targetId).textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      }).catch(function() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
