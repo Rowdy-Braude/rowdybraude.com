@@ -1,573 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Core Memories — Professional Fingerprint</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.7;
-      color: #111;
-      background: #fff;
-      padding: 48px 24px 80px;
-      max-width: 740px;
-      margin: 0 auto;
-    }
-
-    h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
-    .byline { color: #555; font-size: 0.95rem; margin-bottom: 32px; }
-    h2 { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; margin-top: 48px; }
-    p { margin-bottom: 14px; }
-
-    .intro {
-      border-left: 3px solid #ddd;
-      padding-left: 16px;
-      margin-bottom: 36px;
-      color: #333;
-    }
-
-    ol { padding-left: 20px; margin-bottom: 20px; }
-    ol li { margin-bottom: 10px; }
-
-    .memory-types {
-      background: #f9f9f9;
-      border: 1px solid #e5e5e5;
-      border-radius: 6px;
-      padding: 20px 24px;
-      margin: 24px 0 32px;
-    }
-    .memory-types h3 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #777;
-      margin-bottom: 12px;
-    }
-    .memory-types ol { margin-bottom: 0; }
-    .memory-types li { margin-bottom: 6px; font-size: 0.95rem; }
-    .memory-types li strong { font-weight: 600; }
-
-    .block-wrap {
-      margin-top: 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .block-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f5f5f5;
-      padding: 10px 14px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .block-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #555;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .copy-btn {
-      font-size: 0.82rem;
-      font-weight: 600;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 12px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .copy-btn:hover { background: #333; }
-    .copy-btn.copied { background: #2a7a2a; }
-
-    pre {
-      padding: 16px;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.82rem;
-      line-height: 1.6;
-      white-space: pre-wrap;
-      word-break: break-word;
-      overflow-x: auto;
-      background: #fff;
-      color: #111;
-      max-height: 360px;
-      overflow-y: auto;
-    }
-
-    .note {
-      font-size: 0.88rem;
-      color: #666;
-      margin-top: 8px;
-    }
-
-    hr { border: none; border-top: 1px solid #eee; margin: 48px 0; }
-
-    footer { margin-top: 64px; font-size: 0.88rem; color: #888; }
-    footer a { color: #666; }
-    a { color: inherit; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Professional Fingerprint — Eight Prompts for a Personal AI Agent</title>
+<meta name="description" content="Four guided AI interviews and four synthesis prompts to turn your professional fingerprint into context, process, boundaries, and memory for a personal agent.">
+<meta property="og:title" content="Your Professional Fingerprint">
+<meta property="og:description" content="Eight copy-ready prompts for building a personal AI agent that understands how you work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rowdybraude.com/">
+<link rel="canonical" href="https://rowdybraude.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23171717'/%3E%3Cpath d='M16 15h17c11 0 17 6 17 15 0 6-3 10-8 12l9 7H39l-7-6h-5v6H16V15zm11 10v9h6c4 0 6-1 6-4s-2-5-6-5h-6z' fill='%23fffdfa'/%3E%3C/svg%3E">
+<style>
+:root{--paper:#f3efe7;--card:#fffdfa;--ink:#171717;--muted:#625e57;--line:#d8d0c4;--red:#c83b31;--darkred:#97271f;--pink:#f8e6e1;--shadow:0 18px 55px rgba(31,25,17,.09);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 88% 2%,rgba(200,59,49,.13),transparent 24rem),linear-gradient(180deg,#fbf8f2 0,var(--paper) 42rem);font:17px/1.6 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit}.shell{width:min(1160px,calc(100% - 40px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:82px;border-bottom:1px solid rgba(23,23,23,.12)}
+.brand{font-size:.83rem;font-weight:850;letter-spacing:.12em;text-decoration:none;text-transform:uppercase}.event{color:var(--muted);font-size:.82rem;text-align:right}
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:clamp(40px,7vw,92px);align-items:end;padding:clamp(72px,10vw,128px) 0 76px}
+.eyebrow,.kicker{color:var(--darkred);font-size:.77rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 24px}.eyebrow:before{width:28px;height:2px;background:var(--red);content:""}
+h1{max-width:820px;margin:0;font-size:clamp(3.15rem,7.2vw,6.8rem);font-weight:820;letter-spacing:-.072em;line-height:.94}.hero-copy{max-width:720px;margin:30px 0 0;color:#3e3a35;font-size:clamp(1.08rem,1.8vw,1.35rem);line-height:1.55}
+.hero-note{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,253,249,.78);box-shadow:var(--shadow);backdrop-filter:blur(10px)}.hero-note strong{display:block;margin-bottom:9px;font-size:1.05rem}.hero-note p{margin:0;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;font:750 .92rem/1 Inter,ui-sans-serif,sans-serif;text-decoration:none;transition:transform .15s,background .15s}.button:hover{transform:translateY(-1px);background:#303030}.button.secondary{background:transparent;color:var(--ink)}
+.section{padding:84px 0}.section-heading{display:grid;grid-template-columns:.55fr 1.45fr;gap:40px;align-items:start;margin-bottom:38px}.kicker{margin:8px 0 0}h2{margin:0;font-size:clamp(2.1rem,4.2vw,4rem);letter-spacing:-.048em;line-height:1.02}.lede{max-width:740px;margin:18px 0 0;color:var(--muted);font-size:1.06rem}
+.privacy{display:grid;grid-template-columns:auto 1fr;gap:18px;margin-bottom:60px;padding:24px 26px;border:1px solid #dfb4aa;border-radius:18px;background:var(--pink)}.privacy-mark{display:grid;width:34px;height:34px;place-items:center;border-radius:50%;background:var(--red);color:#fff;font-weight:850}.privacy strong{display:block;margin-bottom:4px}.privacy p{margin:0;color:#5d3934}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow);list-style:none}.steps li{min-height:220px;padding:28px 24px;border-right:1px solid var(--line)}.steps li:last-child{border:0}.step-number{color:var(--red);font-size:.75rem;font-weight:850;letter-spacing:.1em}.steps h3{margin:42px 0 8px;font-size:1.35rem;letter-spacing:-.025em}.steps p{margin:0;color:var(--muted);font-size:.92rem}
+.instructions{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:28px}.instruction{padding:28px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.5)}.instruction h3{margin:0 0 12px;font-size:1.1rem}.instruction ol,.instruction ul{margin:0;padding-left:20px}.instruction li+li{margin-top:8px}
+.pairs{display:grid;gap:34px}.pair{scroll-margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow)}.pair-top{display:grid;grid-template-columns:105px minmax(0,1fr) minmax(230px,.48fr);gap:28px;align-items:start;padding:34px;border-bottom:1px solid var(--line)}.pair-index{color:var(--red);font-size:3.2rem;font-weight:800;letter-spacing:-.06em;line-height:1}.pair h3{margin:0;font-size:clamp(1.6rem,3vw,2.45rem);letter-spacing:-.04em;line-height:1.08}.question{margin:8px 0 0;color:var(--muted);font-style:italic}.output{padding-left:22px;border-left:1px solid var(--line);color:var(--muted);font-size:.9rem}.output strong{display:block;margin-bottom:5px;color:var(--ink);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase}
+.prompt-grid{display:grid;grid-template-columns:1fr 1fr}.prompt{min-width:0;padding:30px 34px 34px}.prompt+.prompt{border-left:1px solid var(--line)}.kind{margin:0 0 8px;color:var(--darkred);font-size:.73rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase}.prompt h4{margin:0;font-size:1.2rem;letter-spacing:-.015em}.description{min-height:76px;margin:10px 0 18px;color:var(--muted);font-size:.91rem}.copy{width:100%;border:0}.copy.copied{background:#277148}.copy:disabled{cursor:wait;opacity:.5}
+details{margin-top:14px}summary{cursor:pointer;color:var(--muted);font-size:.87rem;font-weight:700}pre{max-height:520px;margin:14px 0 0;padding:20px;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#f4f1eb;color:#26231f;font:normal .77rem/1.58 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap;word-break:break-word}.error{color:var(--darkred);font-weight:700}
+.closing{padding-bottom:112px;text-align:center}.closing h2{max-width:800px;margin:auto}.closing p{max-width:680px;margin:22px auto 0;color:var(--muted)}.closing .actions{justify-content:center}
+footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}.footer-row{display:flex;justify-content:space-between;gap:24px}.footer-row p{margin:0}
+@media(max-width:860px){.hero,.section-heading{grid-template-columns:1fr}.hero{align-items:start}.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(2){border-right:0}.steps li:nth-child(-n+2){border-bottom:1px solid var(--line)}.pair-top{grid-template-columns:72px 1fr}.output{grid-column:2;padding:14px 0 0;border:0;border-top:1px solid var(--line)}.prompt-grid{grid-template-columns:1fr}.prompt+.prompt{border:0;border-top:1px solid var(--line)}.description{min-height:0}}
+@media(max-width:560px){body{font-size:16px}.shell{width:min(100% - 28px,1160px)}header{min-height:70px}.event{max-width:150px}.hero{padding:58px 0 54px}h1{font-size:clamp(3rem,15vw,4.25rem)}.section{padding:62px 0}.steps,.instructions{grid-template-columns:1fr}.steps li{min-height:170px;border:0;border-bottom:1px solid var(--line)}.steps li:nth-child(3){border-bottom:1px solid var(--line)}.steps h3{margin-top:24px}.pair-top{grid-template-columns:1fr;gap:18px;padding:26px 22px}.output{grid-column:1}.prompt{padding:26px 22px 28px}.footer-row{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+</style>
 </head>
 <body>
-
-<h1>Core Memories — Professional Fingerprint</h1>
-<p class="byline">By Jacob Braude &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/jacobbraude/" target="_blank">LinkedIn</a></p>
-
-<div class="intro">
-  <p>This page has the tools from the article. Use them in order: interview first, synthesis second. Together they produce a "core memories" block you can give to any AI tool so it works from your actual professional judgment instead of a generic template.</p>
-  <p>No sign-up. No form. Just copy.</p>
-</div>
-
-<h2>How this works</h2>
-<ol>
-  <li><strong>Pick your interview format below.</strong> If you use a chatbot (ChatGPT, Claude, Gemini, etc.) use the chatbot prompt. If you use Claude Code or have an AGENTS.md / CLAUDE.md file, use the skill file. Both run the same interview — the format is just different.</li>
-  <li><strong>Run the interview.</strong> Paste the prompt into a new chat and let the AI interview you. Plan for 60–90 minutes across five sections. Voice dictation is faster and more natural than typing if you can use it. Since this is AI-facilitated, you're in control of the pace — if it asks something you feel you already covered, just say so and it will move on. If a question doesn't feel relevant or valuable to you, tell it to skip to the next one.</li>
-  <li><strong>Save the full transcript.</strong> Copy everything from the chat before you close it. Paste it somewhere — a doc, a note, anywhere. You need it for the next step.</li>
-  <li><strong>Run the synthesis.</strong> Open a new chat. Paste the synthesis prompt, then paste your full interview transcript below it. The AI will generate your core memories block.</li>
-  <li><strong>Install it.</strong> Put the output in your AGENTS.md, CLAUDE.md, or SOUL.md — or keep it in a doc and paste it into any chat window when you want AI working from your context.</li>
-</ol>
-
-<div class="memory-types">
-  <h3>The five memory types this interview covers</h3>
-  <ol>
-    <li><strong>Identity Crystallizers</strong> — Moments that revealed something fundamental about who you are professionally</li>
-    <li><strong>Lesson Anchors</strong> — Failures and near-failures that produced principles you still live by</li>
-    <li><strong>Values Under Pressure</strong> — Moments where your values were tested or where competing things you cared about forced a real choice</li>
-    <li><strong>Relational Templates</strong> — People (mentors and adversaries) who permanently shaped how you work and relate to others</li>
-    <li><strong>Mastery Memories</strong> — Moments that revealed what you're genuinely excellent at — and what you're not</li>
+<header class="shell"><a class="brand" href="/">Rowdy Braude</a><div class="event">MATRIX PharmaFwd · Toronto · 2026</div></header>
+<main>
+<section class="shell hero">
+  <div>
+    <p class="eyebrow">Your conference companion</p>
+    <h1>Build an AI that knows how you work.</h1>
+    <p class="hero-copy">Four guided interviews trace your professional fingerprint. Four synthesis prompts turn what you uncover into usable context, process, boundaries, and memory for your own personal agent.</p>
+    <div class="actions"><a class="button" href="#prompts">Get the eight prompts</a><a class="button secondary" href="prompt-suite.md">View the plain-text suite</a></div>
+  </div>
+  <aside class="hero-note"><strong>Think of it as training your Baymax.</strong><p>The harness provides capability. Your professional fingerprint gives the agent judgment, working context, and limits that are distinctly yours.</p></aside>
+</section>
+<section class="section" id="start"><div class="shell">
+  <div class="section-heading"><p class="kicker">How it works</p><div><h2>One pair at a time, over several sessions.</h2><p class="lede">Run each interview in a new AI conversation. Save the complete transcript. Then use its matching synthesis prompt in a second conversation and edit the result before installing it.</p></div></div>
+  <aside class="privacy" aria-label="Privacy notice"><div class="privacy-mark" aria-hidden="true">!</div><div><strong>Protect confidential and sensitive information.</strong><p>Do not provide employer-confidential, patient-identifiable, privileged, regulated, or personally sensitive information unless you are authorized to put it into the AI product you chose. Rowdy Braude does not receive your prompts, answers, or transcripts; your AI provider’s privacy, retention, and training terms still apply.</p></div></aside>
+  <ol class="steps">
+    <li><span class="step-number">01</span><h3>Context</h3><p>Who are you, what matters now, and what working relationship do you want with AI?</p></li>
+    <li><span class="step-number">02</span><h3>Process</h3><p>How do you perform one recurring, high-value piece of work—and where does judgment enter?</p></li>
+    <li><span class="step-number">03</span><h3>Tools</h3><p>What may your agent read, draft, change, send, publish, purchase, or delete?</p></li>
+    <li><span class="step-number">04</span><h3>Memory</h3><p>Which facts, episodes, relationships, and timelines should your agent be able to retrieve?</p></li>
   </ol>
-</div>
-
-<hr>
-
-<h2>Step 1a — Interview Skill (Chatbot)</h2>
-<p>Paste this into a new chat in ChatGPT, Claude, Gemini, or any AI chatbot. The AI will interview you. Plan for 60–90 minutes.</p>
-
-<div class="block-wrap">
-  <div class="block-header">
-    <span class="block-label">Chatbot Prompt</span>
-    <button class="copy-btn" data-target="chatbot-prompt">Copy</button>
+  <div class="instructions">
+    <article class="instruction"><h3>For each pair</h3><ol><li>Copy the interview prompt into a new chat.</li><li>Answer by voice if you can; specific examples beat polished summaries.</li><li>Save the full transcript.</li><li>Copy the matching synthesis prompt into a new chat, followed by the transcript.</li></ol></article>
+    <article class="instruction"><h3>What you finish with</h3><ul><li>A portable personal-agent context file</li><li>One reusable skill plus decision heuristics</li><li>A tool-and-permission policy</li><li>An atomic professional-memory starter pack</li></ul></article>
   </div>
-  <pre id="chatbot-prompt">You are conducting a structured professional interview to help me capture my core professional memories — the specific formative experiences that shaped how I work, what I value, and how I make decisions.
-
-Plan for 60–90 minutes. You will work through five distinct types of memories, spending roughly 15–20 minutes on each. Real depth on a few memories is worth more than a surface pass over many. Do not rush. Do not skip sections.
-
-Your conversational discipline throughout this entire interview:
-- Ask open questions that do not lead me toward any particular answer
-- After I respond, reflect back what you heard in my own words before asking the next question
-- When I give you a specific memory or example, slow down and go deeper — do not move on
-- When I give you a generalization instead of a memory, use one of these: "Can you take me to a specific time when that played out?" / "Walk me through what actually happened." / "What was the moment you realized that?"
-- Before moving from one section to the next, summarize what we covered and ask: "Is there anything else about this that feels important before we move on?"
-- One question at a time. Always. Wait for the full response before asking the next question.
-
----
-
-SECTION 1 — IDENTITY CRYSTALLIZERS
-
-These are moments where I realized something fundamental about who I am professionally — not just a lesson I learned, but something that revealed my character or professional identity to me.
-
-Ask: "Before we get into any structure — what's the first professional memory that surfaces when you think about what made you who you are at work? Don't filter it. Just what comes up first."
-
-After I respond, go deeper on whatever I gave you. Then move into:
-
-"I want to stay in this territory — moments where you didn't just learn something, but where you saw yourself clearly. Tell me about a time when something happened and you thought: so that's who I am professionally."
-
-Probes for this section:
-- "Take me to that specific moment — what was happening right before it?"
-- "What did you realize about yourself — not just about the situation?"
-- "How did you know something had shifted?"
-- "Is that still true about you now?"
-
----
-
-SECTION 2 — LESSON ANCHORS
-
-These are mistakes, failures, or near-failures that produced principles I still carry. Push for the specific incident, not the lesson summary.
-
-Transition: "Now I want to shift to failures and near-failures — experiences that went wrong but left you with something you still use."
-
-Ask: "Tell me about a professional failure or near-failure that you still think about. One that produced a principle you live by today. It doesn't have to be dramatic — it just has to have stuck."
-
-Probes for this section:
-- "Walk me through what actually happened."
-- "What was the moment you knew something had gone wrong?"
-- "What's the principle you took from it? Name it."
-- "Tell me about a time that principle showed up again — when you used it."
-- "Is there a second one — a different failure that taught you something different?"
-
----
-
-SECTION 3 — VALUES UNDER PRESSURE
-
-These are moments where my stated values and my actual behavior diverged — or where I had to choose between two things I both cared about. Go slower here. This is the most personal section.
-
-Transition: "This next area is a bit different. I want to talk about moments where your values were tested — where what you did and what you believed weren't quite aligned, or where you had to choose between two things you both cared about."
-
-Ask: "Tell me about a time when you were caught between two things that both mattered to you — where there wasn't a clean right answer, just a choice that revealed something about what you actually stand for."
-
-Probes for this section — use one at a time, give space between them:
-- "What were the two things in tension?"
-- "How did you decide?"
-- "Looking back — do you think you made the right call?"
-- "What did that experience tell you about what you actually value, as opposed to what you say you value?"
-
-If I give you a vague answer, give me space before pressing. Don't interrogate this section.
-
----
-
-SECTION 4 — RELATIONAL TEMPLATES
-
-These are people — mentors, managers, peers, adversaries — who permanently shaped how I think about work and how I relate to others.
-
-Transition: "Now I want to talk about people — the ones who changed how you work, how you lead, or how you see your field."
-
-First ask: "Who has most shaped how you think about your work? It could be a mentor, a manager, a peer — anyone. Tell me about that person and what they gave you."
-
-Then ask: "Now tell me about someone who shaped you in the opposite direction — someone you learned from by watching what not to do, or someone you had a hard relationship with that still shows up in how you operate."
-
-Probes for both:
-- "What specifically did they do that stuck with you?"
-- "How does that influence show up in how you work now?"
-- "What would that person say about you, do you think?"
-
----
-
-SECTION 5 — MASTERY MEMORIES
-
-These are moments where I discovered what I'm genuinely excellent at — and what I'm not. These govern where I place my attention and what I hand off.
-
-Transition: "Last section. I want to talk about capability — the moments where you discovered what you're genuinely excellent at, and what you're not."
-
-First ask: "Tell me about a moment when you knew — not just from feedback, but in your own bones — that you were genuinely excellent at something. When did that land for you?"
-
-Then ask: "Now the flip side. Tell me about a moment when you realized something you thought was a strength wasn't quite what you thought. How did you find out?"
-
-Probes:
-- "What were you actually doing when you realized it?"
-- "How has that shaped what you take on now?"
-- "What do you trust yourself to do under pressure that you wouldn't hand off?"
-- "What do you consistently hand off — and what made you comfortable doing that?"
-
----
-
-CLOSING — THREE FINAL QUESTIONS
-
-End with these three questions, in this order. Do not skip any.
-
-1. "What did I not ask about that matters — something that shapes how you work that we didn't get to?"
-2. "If AI had to internalize one thing from this whole conversation, what would you want it to be?"
-3. "What should AI that really understood you be able to do that a generic AI couldn't?"
-
-When the session is complete, tell me to save the full transcript. I will need it for the next step — the synthesis prompt.
-
----
-
-Start by saying: "We're going to spend the next hour or so drawing out the professional memories that made you who you are at work. This isn't a career summary — we're after specific moments, the ones you still carry with you. Before we get into any structure, what's the first memory that surfaces when you think about what shaped how you work?"</pre>
-</div>
-<p class="note">Tip: if the AI rushes or gives shallow follow-ups, tell it "slow down and go deeper on that." It will adjust.</p>
-
-<h2>Step 1b — Interview Skill (Skill File)</h2>
-<p>Use this if you have Claude Code or an AGENTS.md / CLAUDE.md / SOUL.md file. Paste the contents into your agent config. Trigger it by saying "run the core memories interview."</p>
-
-<div class="block-wrap">
-  <div class="block-header">
-    <span class="block-label">Skill File</span>
-    <button class="copy-btn" data-target="skill-file">Copy</button>
+</div></section>
+<section class="section" id="prompts"><div class="shell">
+  <div class="section-heading"><p class="kicker">The prompt suite</p><div><h2>Eight prompts. Four foundations.</h2><p class="lede">Copy the prompts exactly as written. Every synthesis is a first draft: correct it before you make it part of an agent harness.</p></div></div>
+  <div class="pairs">
+    <article class="pair" id="context">
+      <div class="pair-top"><div class="pair-index">01</div><div><h3>Context</h3><p class="question">Who are you—and what are we doing?</p></div><div class="output"><strong>Produces</strong>A portable context file describing your world, priorities, standards, working preferences, and the role you want AI to play.</div></div>
+      <div class="prompt-grid">
+        <section class="prompt"><p class="kind">Interview · 40–55 minutes</p><h4>Professional Context</h4><p class="description">Maps your present professional environment, desired outcomes, sources, standards, tensions, and working relationship with AI.</p><button class="button copy" data-prompt="interview-1" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="interview-1">Loading…</pre></details></section>
+        <section class="prompt"><p class="kind">Synthesis</p><h4>Personal-Agent Context File</h4><p class="description">Converts the transcript into a compact, first-person context file suitable for an agent harness.</p><button class="button copy" data-prompt="synthesis-1" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="synthesis-1">Loading…</pre></details></section>
+      </div>
+    </article>
+    <article class="pair" id="process">
+      <div class="pair-top"><div class="pair-index">02</div><div><h3>Process</h3><p class="question">This is the way.</p></div><div class="output"><strong>Produces</strong>One complete reusable skill plus a separate set of decision heuristics, grounded in how you actually work.</div></div>
+      <div class="prompt-grid">
+        <section class="prompt"><p class="kind">Interview · 50–65 minutes</p><h4>Process and Decision Heuristics</h4><p class="description">Extracts one high-value recurring process, including exceptions, judgment calls, quality criteria, and recovery paths.</p><button class="button copy" data-prompt="interview-2" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="interview-2">Loading…</pre></details></section>
+        <section class="prompt"><p class="kind">Synthesis</p><h4>Reusable Skill and Decision Heuristics</h4><p class="description">Builds a skill with triggers, phases, checks, guardrails, failure recovery, and explicitly sourced heuristics.</p><button class="button copy" data-prompt="synthesis-2" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="synthesis-2">Loading…</pre></details></section>
+      </div>
+    </article>
+    <article class="pair" id="tools">
+      <div class="pair-top"><div class="pair-index">03</div><div><h3>Tools and boundaries</h3><p class="question">Just because it can does not mean it should.</p></div><div class="output"><strong>Produces</strong>A granular permission policy separating access from authority, with notes about what requires technical enforcement.</div></div>
+      <div class="prompt-grid">
+        <section class="prompt"><p class="kind">Interview · 35–50 minutes</p><h4>Tools, Autonomy, and Boundaries</h4><p class="description">Maps actions—not just apps—across reversibility, visibility, money, sensitive information, production impact, and reputation.</p><button class="button copy" data-prompt="interview-3" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="interview-3">Loading…</pre></details></section>
+        <section class="prompt"><p class="kind">Synthesis</p><h4>Tool and Permission Policy</h4><p class="description">Turns your answers into allowed, conditional, ask-first, and prohibited actions without pretending prompt text is a security control.</p><button class="button copy" data-prompt="synthesis-3" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="synthesis-3">Loading…</pre></details></section>
+      </div>
+    </article>
+    <article class="pair" id="memory">
+      <div class="pair-top"><div class="pair-index">04</div><div><h3>Memory</h3><p class="question">What should Baymax remember?</p></div><div class="output"><strong>Produces</strong>A starter pack of atomic facts, meaningful episodes, and professional timelines designed for later retrieval and correction.</div></div>
+      <div class="prompt-grid">
+        <section class="prompt"><p class="kind">Interview · 60–90 minutes</p><h4>Core Professional Memory</h4><p class="description">Uses five story lenses to uncover identity, lessons, values under pressure, relational templates, mastery, and change over time.</p><button class="button copy" data-prompt="interview-4" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="interview-4">Loading…</pre></details></section>
+        <section class="prompt"><p class="kind">Synthesis</p><h4>Core Professional Memory Starter Pack</h4><p class="description">Creates atomic semantic facts, episodic memories, and temporal records while preserving uncertainty and conflicting states.</p><button class="button copy" data-prompt="synthesis-4" disabled>Loading prompt…</button><details><summary>Read the full prompt</summary><pre id="synthesis-4">Loading…</pre></details></section>
+      </div>
+    </article>
   </div>
-  <pre id="skill-file"># Skill: Core Memories Interview
-
-**Trigger:** User says "run the core memories interview", "interview me on my professional memories", "start the core memories skill", or "let's do the professional fingerprint interview"
-
-**Execution mode:** Blocking — complete each phase before advancing. Do not produce synthesis during the session. Do not skip sections.
-
----
-
-## Purpose
-
-Draw out the five types of professional memories that most significantly shape how a person works, decides, and relates to others at work. Output is a raw transcript the user saves and runs through the synthesis prompt to generate a core memories block for their AI tools.
-
-Estimated session length: 60–90 minutes. Approximately 15–20 minutes per memory type.
-
-Methodology:
-- OARS framework (Miller & Rollnick, Motivational Interviewing): conversational structure that elicits genuine disclosure over performative answers
-- Critical Incident Technique (Flanagan, 1954): specific incidents surface tacit knowledge that generalizations miss
-- Narrative Identity framework (McAdams): formative episodes as the building blocks of professional identity
-
----
-
-## Conversational Discipline
-
-Apply throughout the entire session.
-
-| Element | Rule |
-|---------|------|
-| Open questions | Never ask a yes/no question |
-| Reflections | Reflect before every follow-up question |
-| Affirmations | Acknowledge when a real memory surfaces, not just content |
-| Summaries | Summarize before every section transition |
-
-2:1 ratio: two reflections for every new question.
-One question at a time. Always.
-Specificity over volume: push for the specific incident every time a generalization appears.
-
----
-
-## The Five Memory Types
-
-1. Identity Crystallizers — Moments that revealed something fundamental about who the user is professionally. Not lessons — self-revelations.
-2. Lesson Anchors — Failures and near-failures that produced principles still in active use.
-3. Values Under Pressure — Moments where stated values and actual behavior diverged, or where competing goods forced a real choice.
-4. Relational Templates — People (mentors and adversaries) who permanently shaped how the user thinks about work and relates to others.
-5. Mastery Memories — Moments that revealed genuine excellence or genuine limitation.
-
----
-
-## Phase Structure
-
-### Phase 0 — Orientation (2 min)
-
-Tell the user: this interview covers five distinct memory types, plan for 60–90 minutes, and the output is a transcript they save and run through the synthesis prompt.
-
-Do not ask any questions in Phase 0.
-
-### Phase 1 — Warm-Up
-
-Opening: "Before we get into any structure — what's the first professional memory that surfaces when you think about what shaped how you work? Don't filter it. Just what comes up first."
-
-Go deeper on whatever surfaces. Mirror the user's vocabulary throughout the entire session.
-
-### Phase 2a — Identity Crystallizers (15–20 min)
-
-Goal: moments that revealed the user's professional character or identity to themselves.
-
-Opening: "Tell me about a time when something happened and you thought: so that's who I am professionally. A moment where you didn't just learn something — you saw yourself clearly."
-
-Sequence:
-1. Opening question
-2. OARS follow-ups — reflect first, then probe
-3. Critical Incident probes: "Take me to that specific moment — what was happening right before it?" / "What did you realize about yourself, not just about the situation?" / "Is that still true about you now?"
-4. Readiness check: "Is there anything else from this territory that feels important before we move on?"
-5. Summary and transition
-
-### Phase 2b — Lesson Anchors (15–20 min)
-
-Goal: failures and near-failures that produced principles still in use. Push for the incident before the lesson.
-
-Opening: "Tell me about a professional failure or near-failure that you still think about. One that produced a principle you live by today."
-
-Sequence:
-1. Opening question
-2. Push for the incident: "Walk me through what actually happened."
-3. Then the principle: "What's the rule you took from it? Name it."
-4. Then application: "Tell me about a time that rule showed up again."
-5. Optional: "Is there a second one — a different failure that taught you something different?"
-6. Readiness check + summary + transition
-
-### Phase 2c — Values Under Pressure (15–20 min)
-
-Goal: moments where stated values and actual behavior diverged, or where competing values forced a real choice. Pace this section more slowly.
-
-Opening: "Tell me about a time when you were caught between two things that both mattered to you — where there wasn't a clean right answer, just a choice that revealed something about what you actually stand for."
-
-Probes — one at a time, with space:
-- "What were the two things in tension?"
-- "How did you decide?"
-- "Looking back — do you think you made the right call?"
-- "What did that tell you about what you actually value, as opposed to what you say you value?"
-
-If the user gives a vague answer, reflect it back as curiosity, not as a probe. Give space before pressing.
-
-Readiness check + summary + transition
-
-### Phase 2d — Relational Templates (15–20 min)
-
-Goal: people who permanently shaped how the user works and relates to others — positive and negative.
-
-Two-part structure:
-
-Part A: "Who has most shaped how you think about your work? Tell me about that person and what they gave you."
-
-Part B: "Now tell me about someone who shaped you in the opposite direction — someone you learned from by watching what not to do, or someone you had a hard relationship with that still shows up in how you operate."
-
-Probes: "What specifically did they do that stuck with you?" / "How does that show up in how you work now?" / "What would that person say about you?"
-
-Readiness check + summary + transition
-
-### Phase 2e — Mastery Memories (15–20 min)
-
-Goal: moments that revealed genuine excellence and genuine limitation.
-
-Two-part structure:
-
-Part A: "Tell me about a moment when you knew — not just from feedback, but in your own bones — that you were genuinely excellent at something. When did that land for you?"
-
-Part B: "Now the flip side. Tell me about a moment when you realized something you thought was a strength wasn't quite what you thought. How did you find out?"
-
-Probes: "What were you actually doing when you realized it?" / "How has that shaped what you take on now?" / "What do you trust yourself to do under pressure that you wouldn't hand off?" / "What do you consistently hand off?"
-
-Readiness check + summary
-
-### Phase 3 — Calibration (5 min)
-
-Close with these three questions, in this order:
-1. "What did I not ask about that matters — something that shapes how you work that we didn't get to?"
-2. "If AI had to internalize one thing from this whole conversation, what would you want it to be?"
-3. "What should AI that really understood you be able to do that a generic AI couldn't?"
-
-### Phase 4 — Close
-
-Tell the user to save the full transcript. Direct them to the synthesis prompt as the next step.
-
----
-
-## Guardrails
-
-1. One question at a time. No compound questions.
-2. Reflect before you probe. Mirror what was said before asking the next question.
-3. Never name a principle before the user does. If you interpret first, you contaminate it.
-4. Mirror vocabulary. Use their exact words.
-5. Specificity over volume. Push for the specific incident every time.
-6. Pace Section 2c (Values) differently — more space, fewer probes.
-7. Do not synthesize during the interview. Transcript goes to the synthesis prompt separately.
-8. The readiness check is not optional.</pre>
-</div>
-<p class="note">Not familiar with skill files? Ask your AI "how do I add a skill to my AGENTS.md" and it will walk you through it.</p>
-
-<h2>Step 2 — Synthesis Prompt</h2>
-<p>Open a new chat. Paste this prompt, then paste your full interview transcript below the line at the bottom. The AI will generate your core memories block organized around the five memory types.</p>
-
-<div class="block-wrap">
-  <div class="block-header">
-    <span class="block-label">Synthesis Prompt</span>
-    <button class="copy-btn" data-target="synthesis-prompt">Copy</button>
-  </div>
-  <pre id="synthesis-prompt">Below is a transcript of a structured professional interview covering five types of formative professional memories. Synthesize it into a "core memories" block — a concise, first-person document I can install in my AI tools so they work from my actual professional judgment, not a generic template.
-
-Instructions:
-- Write everything in first person, as if I wrote it myself
-- Organize the output around the five memory types below — each gets its own section
-- Name principles and patterns using the language I used in the interview, not your paraphrase
-- Do not invent content I didn't express. If you infer something, mark it [inferred] and note what it's based on — I'll decide whether to keep it
-- Keep it tight. This is a functional document. No preamble, no narrative framing, no commentary
-
-Output format — use this exactly:
-
----
-
-## My Core Professional Memories
-
-### Who I Am Professionally
-(From: Identity Crystallizers)
-
-[2–4 sentences in first person. A character portrait, not a values statement. What did these moments reveal about who I actually am at work?]
-
----
-
-### Rules I Work By
-(From: Lesson Anchors)
-
-**[Rule name]** — [One sentence: what this means in practice]. This comes from [one sentence: the specific incident or failure]. I know this rule is being violated when [concrete signal].
-
-(Repeat for each rule or principle)
-
----
-
-### What I Stand For
-(From: Values Under Pressure)
-
-[What these moments revealed about what I actually value — not what I say I value. Include the tension that surfaced it, briefly. 2–4 sentences.]
-
----
-
-### How I See and Relate to People at Work
-(From: Relational Templates)
-
-What I look for: [What the positive template taught me to seek in colleagues, managers, direct reports]
-
-What I won't tolerate: [What the adversary or negative template taught me to recognize and avoid]
-
-How this shows up: [1–2 sentences on how these templates influence how I manage, collaborate, or build teams today]
-
----
-
-### What I Trust Myself to Do
-(From: Mastery Memories)
-
-Where I reach in: [The capability I trust myself to own, especially under pressure]
-
-Where I hand off: [What I've learned to delegate or not take on alone]
-
----
-
-### How I Work
-(Cross-cutting patterns from the full session)
-
-- [Working style or pace preference]
-- [How I communicate or want to be communicated with]
-- [What I reward or look for in others' work]
-- [What I avoid or find draining]
-- [How I handle conflict or disagreement]
-
----
-
-### Language I Use
-(Words and phrases to mirror — list only, no explanations)
-
-[term] / [term] / [term] / [term] ...
-
----
-
-### What AI Should Do Differently With This
-(From: closing questions)
-
-[2–3 sentences. What AI that has internalized these memories should be able to do that a generic AI couldn't. Pull from my answers to the final three interview questions if they're strong; otherwise synthesize from the session.]
-
----
-
-[PASTE YOUR FULL INTERVIEW TRANSCRIPT BELOW THIS LINE]</pre>
-</div>
-<p class="note">Paste the transcript immediately after that last line. No label or header needed — just the raw text.</p>
-
-<hr>
-
-<footer>
-  <p>Questions or feedback — DM me on <a href="https://www.linkedin.com/in/jacobbraude/" target="_blank">LinkedIn</a>.</p>
-</footer>
-
+  <p id="load-status" role="status" aria-live="polite"></p>
+</div></section>
+<section class="shell section closing"><p class="kicker">The point</p><h2>Your agent does not need a generic profile. It needs the evidence of how you became you.</h2><p>Keep the transcripts. Challenge the syntheses. Update the artifacts when your role, process, boundaries, or beliefs change.</p><div class="actions"><a class="button" href="#prompts">Choose your first interview</a></div></section>
+</main>
+<footer><div class="shell footer-row"><p>Created by Jacob Braude · Rowdy Braude</p><p>Questions or feedback? <a href="https://www.linkedin.com/in/jacobbraude/" target="_blank" rel="noopener noreferrer">Message me on LinkedIn</a>.</p></div></footer>
 <script>
-  document.querySelectorAll('.copy-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var targetId = btn.getAttribute('data-target');
-      var text = document.getElementById(targetId).textContent;
-      navigator.clipboard.writeText(text).then(function() {
-        btn.textContent = 'Copied';
-        btn.classList.add('copied');
-        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-      }).catch(function() {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        btn.textContent = 'Copied';
-        btn.classList.add('copied');
-        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
-      });
-    });
-  });
+(function(){
+var prompts=[
+["interview-1","Interview Prompt 1 — Professional Context"],["synthesis-1","Synthesis Prompt 1 — Personal-Agent Context File"],
+["interview-2","Interview Prompt 2 — Process and Decision Heuristics"],["synthesis-2","Synthesis Prompt 2 — Reusable Skill and Decision Heuristics"],
+["interview-3","Interview Prompt 3 — Tools, Autonomy, and Boundaries"],["synthesis-3","Synthesis Prompt 3 — Tool and Permission Policy"],
+["interview-4","Interview Prompt 4 — Core Professional Memory"],["synthesis-4","Synthesis Prompt 4 — Core Professional Memory Starter Pack"]];
+function extract(markdown,heading){
+ var at=markdown.indexOf("### "+heading),ticks=String.fromCharCode(96,96,96);
+ if(at<0)throw new Error("Missing heading: "+heading);
+ var fence=markdown.indexOf(ticks+"text",at);
+ if(fence<0)throw new Error("Missing prompt block: "+heading);
+ var start=markdown.indexOf("\n",fence)+1,end=markdown.indexOf("\n"+ticks,start);
+ if(end<0)throw new Error("Unclosed prompt block: "+heading);
+ return markdown.slice(start,end).trim();
+}
+function fallback(text){var area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();document.execCommand("copy");area.remove()}
+fetch("prompt-suite.md").then(function(r){if(!r.ok)throw new Error("Prompt source could not be loaded.");return r.text()}).then(function(markdown){
+ prompts.forEach(function(item){var id=item[0],text=extract(markdown,item[1]),pre=document.getElementById(id),button=document.querySelector('[data-prompt="'+id+'"]');pre.textContent=text;button.disabled=false;button.textContent="Copy prompt";button.addEventListener("click",function(){var copy=navigator.clipboard&&window.isSecureContext?navigator.clipboard.writeText(text):Promise.resolve(fallback(text));copy.then(function(){button.textContent="Copied";button.classList.add("copied");setTimeout(function(){button.textContent="Copy prompt";button.classList.remove("copied")},1800)})})})
+}).catch(function(error){var status=document.getElementById("load-status");status.className="error";status.textContent="The embedded prompts could not load. Use the plain-text suite link above.";document.querySelectorAll("pre").forEach(function(pre){pre.textContent=error.message})})
+}());
 </script>
-
 </body>
 </html>
